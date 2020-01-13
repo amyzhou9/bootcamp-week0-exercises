@@ -8,12 +8,29 @@ const assert = require('assert')
 
 // TODO
 const multOf7 = el => {
-
+    if (typeof(el)=== 'number'){
+        if(el%7===0){
+            return true; 
+        }
+        else{
+            return false;
+        }
+    }
+    else{
+        return false;
+    }
 };
 
 // TODO
-Array.prototype.filter = function(fun) {
 
+Array.prototype.filter = function(fun) {
+    let x =[];
+    for(i=0; i<this.length; i++){
+        if(fun(this[i])){
+            x.push(this[i]);
+        }
+    }
+    return x;
 };
 
 const arr = [7, 8, 15, 14, 13, 70, 44, 35, 88, 77, false, "7", "hi", null];
